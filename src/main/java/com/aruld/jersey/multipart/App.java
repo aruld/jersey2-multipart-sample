@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  * @author Arul Dhesiaseelan (aruld@acm.org)
  */
 public class App {
-    private static final URI BASE_URI = URI.create("http://localhost:8080/");
+    public static final URI BASE_URI = URI.create("http://localhost:8080/");
     public static final String ROOT_PATH = "multipart";
     private static final Logger LOGGER = Logger.getLogger(App.class.getName());
 

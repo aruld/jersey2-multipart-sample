@@ -9,9 +9,51 @@ On the server-side:
      resourceConfig.register(MultiPartFeature.class);
 ```
 
+On the server-side (servlet deployment):
+```java
+   import org.glassfish.jersey.filter.LoggingFilter;
+   import org.glassfish.jersey.media.multipart.MultiPartFeature;
+
+   import javax.ws.rs.core.Application;
+   import java.util.HashSet;
+   import java.util.Set;
+
+   public class MyApplication extends Application {
+       @Override
+       public Set<Class<?>> getClasses() {
+           final Set<Class<?>> classes = new HashSet<Class<?>>();
+           // register resources and features
+           classes.add(MultiPartFeature.class);
+           classes.add(MultiPartResource.class);
+           classes.add(LoggingFilter.class);
+           return classes;
+       }
+   }
+```
+
+web.xml:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+    <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <servlet>
+        <servlet-name>Jersey Servlet</servlet-name>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.aruld.jersey.multipart.MyApplication</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Jersey Servlet</servlet-name>
+        <url-pattern>/*</url-pattern>
+    </servlet-mapping>
+</web-app>
+```
+
 On the client-side:
 ```java
-     final ClientConfig resourceConfig = new ClientConfig();
+     final ClientConfig clientConfig = new ClientConfig();
      clientConfig.register(MultiPartFeature.class);
      Client client = ClientFactory.newClient(clientConfig);
 ```
