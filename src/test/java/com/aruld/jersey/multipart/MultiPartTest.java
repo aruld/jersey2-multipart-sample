@@ -33,7 +33,7 @@ public class MultiPartTest extends JerseyTest {
         enable(TestProperties.LOG_TRAFFIC);
         enable(TestProperties.DUMP_ENTITY);
         final ResourceConfig resourceConfig = new ResourceConfig(MultiPartResource.class);
-        resourceConfig.register(new MultiPartFeature());
+        resourceConfig.register(MultiPartFeature.class);
         return resourceConfig;
     }
 

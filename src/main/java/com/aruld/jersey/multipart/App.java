@@ -24,7 +24,7 @@ public class App {
             System.out.println("\"MultiPart\" Jersey Example App");
             final ResourceConfig resourceConfig = new ResourceConfig(MultiPartResource.class);
             resourceConfig.registerInstances(new LoggingFilter(LOGGER, true));
-            resourceConfig.register(new MultiPartFeature());
+            resourceConfig.register(MultiPartFeature.class);
             final HttpServer server = GrizzlyHttpServerFactory.createHttpServer(BASE_URI, resourceConfig);
             System.out.println(String.format("Application started.\nTry out %s%s\nHit enter to stop it...", BASE_URI, ROOT_PATH));
             System.in.read();
