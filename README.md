@@ -4,17 +4,17 @@ Example showing how to implement a multipart resource in a Jersey 2 application.
 MultiPart support is implemented as a JAX-RS [Feature](http://jersey.java.net/nonav/apidocs/snapshot/jersey/javax/ws/rs/core/Feature.html), so it should be enabled on the application.
 
 On the server-side:
-@
+```java
      final ResourceConfig resourceConfig = new ResourceConfig(MultiPartResource.class);
      resourceConfig.register(MultiPartFeature.class);
-@
+```
 
 On the client-side:
-@
+```java
      final ClientConfig resourceConfig = new ClientConfig();
      clientConfig.register(MultiPartFeature.class);
      Client client = ClientFactory.newClient(clientConfig);
-@
+```
 
 
 h2. Setup
@@ -26,7 +26,7 @@ h2. Testing
 
 * Run MultiPartTest from your favourite IDE or run using "mvn test". Here is a sample output:
 
-@
+```
 Jan 17, 2013 8:31:31 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer start
 INFO: Starting GrizzlyTestContainer...
 Jan 17, 2013 8:31:32 PM org.glassfish.grizzly.http.server.NetworkListener start
@@ -63,5 +63,5 @@ Jan 17, 2013 8:31:33 PM org.glassfish.grizzly.http.server.NetworkListener stop
 INFO: Stopped listener bound to [localhost:9998]
 Jan 17, 2013 8:31:30 PM org.glassfish.jersey.server.ApplicationHandler initialize
 INFO: Initiating Jersey application, version Jersey: 2.0-m11 2012-12-21 12:34:15...
-@
+```
 
