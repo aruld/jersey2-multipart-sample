@@ -109,5 +109,5 @@ INFO: Initiating Jersey application, version Jersey: 2.0-m11 2012-12-21 12:34:15
 
 
 ### Test using Servlet:
-mvn jetty:run
-Then run MultiPartClient.
+* mvn jetty:run
+* Then run MultiPartClient.
