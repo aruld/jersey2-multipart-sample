@@ -1,4 +1,4 @@
-h1. Jersey 2 MultiPart Sample App
+# Jersey 2 MultiPart Sample App
 
 Example showing how to implement a multipart resource in a Jersey 2 application.
 MultiPart support is implemented as a JAX-RS [Feature](http://jersey.java.net/nonav/apidocs/snapshot/jersey/javax/ws/rs/core/Feature.html), so it should be enabled on the application.
@@ -17,12 +17,12 @@ On the client-side:
 ```
 
 
-h2. Setup
+## Setup
 
-* git clone https://github.com/aruld/jersey2-multipart-sample.git
+* Clone this repository
 * mvn install
 
-h2. Testing
+## Testing
 
 * Run MultiPartTest from your favourite IDE or run using "mvn test". Here is a sample output:
 
