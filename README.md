@@ -66,7 +66,7 @@ On the client-side:
 
 ## Testing
 
-* Run MultiPartTest from your favourite IDE or run using "mvn test". Here is a sample output:
+### Run MultiPartTest from your favourite IDE or run using "mvn test". Here is a sample output:
 
 ```
 Jan 17, 2013 8:31:31 PM org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory$GrizzlyTestContainer start
@@ -107,3 +107,7 @@ Jan 17, 2013 8:31:30 PM org.glassfish.jersey.server.ApplicationHandler initializ
 INFO: Initiating Jersey application, version Jersey: 2.0-m11 2012-12-21 12:34:15...
 ```
 
+
+### Test using Servlet:
+mvn jetty:run
+Then run MultiPartClient.

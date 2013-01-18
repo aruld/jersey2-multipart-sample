@@ -7,6 +7,11 @@ import javax.ws.rs.core.Application;
 import java.util.HashSet;
 import java.util.Set;
 
+/**
+ * Portable JAX-RS application.
+ *
+ * @author Arul Dhesiaseelan (aruld@acm.org)
+ */
 public class MyApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
